@@ -129,8 +129,8 @@ Grocery List - Week of [date]
 | MCP Server          | Status        | Auth Required        | Used By           |
 |---------------------|---------------|----------------------|-------------------|
 | Notion MCP          | Configured    | Notion API key       | Stories 01–03, 07–08 |
-| Google Calendar MCP | To configure  | Google OAuth         | Stories 04, 06       |
-| MS365 / Outlook MCP | To configure  | Microsoft OAuth (work account policy TBD) | Story 05 |
+| Google Calendar MCP | To configure  | Google OAuth (Go + Jillian separately) | Stories 04, 06 |
+| MS365 / Outlook MCP | Conditional   | Only needed if work calendar is NOT in Go's Google Cal — validate first | Story 05 |
 | Granola MCP         | Available     | Granola account      | Story 10             |
 
 ---
@@ -161,6 +161,8 @@ Family-OS/
 ---
 
 ## Known Risks
+
+**Validate work calendar visibility in Google Calendar before building Story 05.** Go's Oracle/NetSuite work calendar may already appear in his Google Calendar as a subscribed calendar, making Outlook sync unnecessary. Check this first — if work events are in Google Cal, Story 05 is dropped entirely.
 
 **Outlook OAuth may be blocked by Oracle corporate policy.** If Microsoft Graph API OAuth is restricted for third-party apps on Go's work account, Story 05 needs a workaround (manual export, iCal feed, or IT exception). Validate before building Story 05.
 
