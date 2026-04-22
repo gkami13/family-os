@@ -1,7 +1,7 @@
 # Story 03: Weekly Task Digest
 
 ## As a
-Go
+husband
 
 ## I want
 A weekly summary of all open and overdue tasks, grouped by assignee, delivered as a Notion page or CLI output every Sunday evening

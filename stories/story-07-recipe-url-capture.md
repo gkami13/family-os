@@ -1,7 +1,7 @@
 # Story 07: Recipe URL → Notion Capture
 
 ## As a
-Go or Jillian
+husband or wife
 
 ## I want
 To paste a recipe URL into Claude CLI and have the recipe automatically saved to our Notion recipe database with title, ingredients, and source URL

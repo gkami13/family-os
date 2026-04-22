@@ -3,8 +3,8 @@
 ## Project Overview
 
 **Name:** Family OS
-**Owner:** Go (Strategic Program Manager at Oracle/NetSuite)
-**Users:** Go and Jillian (spouse, Director of New Business Mid-Market Sales at monday.com)
+**Owner:** husband (Strategic Program Manager at Oracle/NetSuite)
+**Users:** husband and wife (spouse, Director of New Business Mid-Market Sales at monday.com)
 **Purpose:** A personal operating system that unifies meal planning, calendar management, and household task coordination for a dual-career family with two young children and a large dog.
 **Secondary purpose:** Public portfolio project demonstrating practical AI/MCP engineering skills — positioning for Director-level GTM Strategy and Operations roles at innovative AI-forward companies (Anthropic, Databricks, MongoDB, Snowflake, etc.).
 
@@ -14,7 +14,7 @@ Build a locally-run, agent-orchestrated system that reduces household mental loa
 
 1. **Meal Planning** — Recipe capture (URL → Notion → ingredients → grocery list → Amazon basket)
 2. **Calendar Aggregation** — Outlook + Google + Work calendars → unified Notion view, conflict detection, family time windows
-3. **Task Coordination** — Shared Notion dashboard for household task delegation between Go and Jillian
+3. **Task Coordination** — Shared Notion dashboard for household task delegation between husband and wife
 
 The project is built publicly on GitHub to serve as a portfolio artifact. Commits should show progression, thinking, and architecture decisions — not just polished end states.
 
@@ -61,7 +61,7 @@ The project is built publicly on GitHub to serve as a portfolio artifact. Commit
 - Teaches MCP orchestration and multi-source data handling
 
 ### Phase 5 — Third Slice (Week 5)
-- **Feature:** Task coordination layer in Notion with shared Go/Jillian dashboard
+- **Feature:** Task coordination layer in Notion with shared husband/wife dashboard
 - Real-world test: both users actively using it for household tasks
 
 ### Phase 6 — Polish & UI (Week 6+)
@@ -112,7 +112,7 @@ When Claude is invoked in this directory (via Claude CLI or Cowork), it should:
 6. **Update `ARCHITECTURE.md`** when architecture decisions are made or changed.
 7. **Reference other open-source projects** for patterns, but build original work in this repo. Credit inspirations in README.
 
-## Learning Goals for Go
+## Learning Goals for husband
 
 This project is also a learning vehicle. Track progress against these skills:
 

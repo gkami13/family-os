@@ -10,9 +10,9 @@ Built on Claude CLI + Notion. No custom backend. No app to maintain. Just an age
 
 Three workstreams, unified in Notion:
 
-**Tasks** — Create and track household tasks with assignees and due dates. Nothing falls through. Go or Jillian can ask Claude to create, update, or summarize tasks in plain language.
+**Tasks** — Create and track household tasks with assignees and due dates. Nothing falls through. husband or wife can ask Claude to create, update, or summarize tasks in plain language.
 
-**Calendar** — Syncs Go's Google Calendar and Outlook work calendar into a shared Notion view. Surfaces weeks where both parents are blocked simultaneously so we can arrange coverage before the morning it happens.
+**Calendar** — Syncs husband's Google Calendar and Outlook work calendar into a shared Notion view. Surfaces weeks where both parents are blocked simultaneously so we can arrange coverage before the morning it happens.
 
 **Meals** — Save a recipe from any URL directly to Notion. Select recipes for the week and get a deduplicated, categorized grocery list — no re-reading five recipes to build a list in your head.
 
@@ -28,7 +28,7 @@ Claude CLI  →  MCP Servers  →  Notion (shared workspace)
 
 - **Claude CLI** is the interface. Natural language in, structured Notion data out.
 - **MCP servers** are the connectors — Notion, Google Calendar, Outlook.
-- **Notion** is the database and the UI. Go and Jillian both have full access on all devices.
+- **Notion** is the database and the UI. husband and wife both have full access on all devices.
 
 ---
 

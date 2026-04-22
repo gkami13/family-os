@@ -18,7 +18,7 @@ The system is intentionally simple: Claude CLI is the interface, Notion is the d
 
 All persistent data lives in Notion. Tasks, calendar events, recipes, and meal plans are Notion database entries. Claude reads and writes through the Notion MCP.
 
-**Why:** Notion gives both Go and Jillian a shared, always-accessible view without any custom frontend work. It handles multi-device sync, permissions, and UI for free. We build the logic layer; Notion handles persistence and presentation.
+**Why:** Notion gives both husband and wife a shared, always-accessible view without any custom frontend work. It handles multi-device sync, permissions, and UI for free. We build the logic layer; Notion handles persistence and presentation.
 
 **Trade-off accepted:** Notion has API rate limits and occasional latency. For a household tool with low query volume, this is fine.
 
@@ -36,7 +36,7 @@ The original project plan led with Recipe Capture (Phase 3 in CLAUDE.md). After 
 
 1. It solves the highest-pain problem immediately (task fallthrough)
 2. The Notion MCP is already configured — no new auth or MCP setup required
-3. It delivers value to Jillian immediately, making her a real user vs. a future one
+3. It delivers value to wife immediately, making her a real user vs. a future one
 4. Recipe capture requires web scraping + parsing work that is higher-risk for a first slice
 
 ### Decision 4: CLI-first, no frontend until Phase 6
@@ -54,11 +54,11 @@ Every feature is built and validated via Claude CLI before any UI is considered.
 | Field       | Type          | Values                                    |
 |-------------|---------------|-------------------------------------------|
 | Name        | Title         | Free text                                 |
-| Owner       | Select        | Go \| Jillian \| Both                    |
+| Owner       | Select        | husband \| wife \| Both                    |
 | Status      | Select        | Active \| On Hold \| Complete             |
 | Description | Text          | Free text                                 |
 
-Default projects: Home, Kids, Admin, Dog, Work. Go can create new projects at any time. Each project page shows a linked view of all tasks belonging to it.
+Default projects: Home, Kids, Admin, Dog, Work. husband can create new projects at any time. Each project page shows a linked view of all tasks belonging to it.
 
 ### Family Tasks (Notion Database)
 
@@ -66,7 +66,7 @@ Default projects: Home, Kids, Admin, Dog, Work. Go can create new projects at an
 |-------------|---------------|-----------------------------------------------|
 | Title       | Title         | Free text                                        |
 | Project     | Relation      | → Projects database                              |
-| Assignee    | Select        | Go \| Jillian \| Both                           |
+| Assignee    | Select        | husband \| wife \| Both                           |
 | Priority    | Select        | P1 (do today) \| P2 (this week) \| P3 (someday) |
 | Status      | Select        | Not Started \| In Progress \| Done \| Blocked   |
 | Due Date    | Date          | Date picker                                      |
@@ -75,14 +75,14 @@ Default projects: Home, Kids, Admin, Dog, Work. Go can create new projects at an
 
 Default sort: Priority ascending, then Due Date ascending. This powers the dashboard tasks view.
 
-Three key Notion views: "My Tasks" (Go), "Jillian's Tasks", "All Open Tasks" grouped by Project.
+Three key Notion views: "My Tasks" (husband), "wife's Tasks", "All Open Tasks" grouped by Project.
 
 ### Family Calendar (Notion Database)
 
 | Field       | Type          | Values                                    |
 |-------------|---------------|-------------------------------------------|
 | Title       | Title         | Event name                                |
-| Person      | Select        | Go \| Jillian                            |
+| Person      | Select        | husband \| wife                            |
 | Date        | Date          | Date + time                               |
 | End Time    | Text          | ISO time string (MVP: text field)        |
 | Source      | Select        | Google \| Outlook \| monday.com          |
@@ -104,7 +104,7 @@ Expected fields: Title, Source URL, Ingredients (text), Cuisine, Prep Time
 | Content     | Text          | Rich text — the actual note                     |
 | Tags        | Multi-select  | Work \| Personal \| Meeting \| Idea \| Follow-up|
 
-Sorted by Date descending. Surfaces in the Go-only section of the Unified Dashboard.
+Sorted by Date descending. Surfaces in the husband-only section of the Unified Dashboard.
 
 ### Meal Plan (Notion Page per week)
 
@@ -129,8 +129,8 @@ Grocery List - Week of [date]
 | MCP Server          | Status        | Auth Required        | Used By           |
 |---------------------|---------------|----------------------|-------------------|
 | Notion MCP          | Configured    | Notion API key       | Stories 01–03, 07–08 |
-| Google Calendar MCP | To configure  | Google OAuth (Go + Jillian separately) | Stories 04, 06 |
-| MS365 / Outlook MCP | Conditional   | Only needed if work calendar is NOT in Go's Google Cal — validate first | Story 05 |
+| Google Calendar MCP | To configure  | Google OAuth (husband + wife separately) | Stories 04, 06 |
+| MS365 / Outlook MCP | Conditional   | Only needed if work calendar is NOT in husband's Google Cal — validate first | Story 05 |
 | Granola MCP         | Available     | Granola account      | Story 10             |
 
 ---
@@ -162,13 +162,13 @@ Family-OS/
 
 ## Known Risks
 
-**Validate work calendar visibility in Google Calendar before building Story 05.** Go's Oracle/NetSuite work calendar may already appear in his Google Calendar as a subscribed calendar, making Outlook sync unnecessary. Check this first — if work events are in Google Cal, Story 05 is dropped entirely.
+**Validate work calendar visibility in Google Calendar before building Story 05.** husband's Oracle/NetSuite work calendar may already appear in his Google Calendar as a subscribed calendar, making Outlook sync unnecessary. Check this first — if work events are in Google Cal, Story 05 is dropped entirely.
 
-**Outlook OAuth may be blocked by Oracle corporate policy.** If Microsoft Graph API OAuth is restricted for third-party apps on Go's work account, Story 05 needs a workaround (manual export, iCal feed, or IT exception). Validate before building Story 05.
+**Outlook OAuth may be blocked by Oracle corporate policy.** If Microsoft Graph API OAuth is restricted for third-party apps on husband's work account, Story 05 needs a workaround (manual export, iCal feed, or IT exception). Validate before building Story 05.
 
 **Recipe scraping is unreliable.** Many recipe sites are JavaScript-heavy or paywalled. Story 07 should implement graceful fallback and explicit failure messaging rather than attempting to scrape everything.
 
-**Jillian's buy-in is required for calendar sync (Story 06).** She needs to authorize her Google account. This is a coordination dependency, not a technical one — sequence accordingly.
+**wife's buy-in is required for calendar sync (Story 06).** She needs to authorize her Google account. This is a coordination dependency, not a technical one — sequence accordingly.
 
 ---
 
@@ -184,7 +184,7 @@ Family-OS/
 
 Notion is the frontend. Full stop.
 
-Go and Jillian share the same Notion workspace and already have access on all their devices. Building a separate web app would recreate things Notion does for free: multi-device sync, shared views, permissions, mobile access, real-time updates.
+husband and wife share the same Notion workspace and already have access on all their devices. Building a separate web app would recreate things Notion does for free: multi-device sync, shared views, permissions, mobile access, real-time updates.
 
 The system Claude builds and maintains is the logic and orchestration layer — creating tasks, syncing calendars, generating grocery lists. Notion surfaces all of that to both users without any frontend work required.
 

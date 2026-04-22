@@ -1,7 +1,7 @@
 # Story 08: Weekly Meal Plan + Grocery List
 
 ## As a
-Go or Jillian
+husband or wife
 
 ## I want
 To select recipes for the week and have the system generate a combined grocery list, deduplicated and organized by category
@@ -10,7 +10,7 @@ To select recipes for the week and have the system generate a combined grocery l
 Grocery shopping takes 10 minutes instead of 30 — no more re-reading five recipes to build a list in my head
 
 ## Acceptance Criteria
-- [ ] Go can say "plan meals for this week: Monday - Chicken Tikka, Wednesday - Pasta Primavera, Friday - Tacos"
+- [ ] husband can say "plan meals for this week: Monday - Chicken Tikka, Wednesday - Pasta Primavera, Friday - Tacos"
 - [ ] System looks up each recipe in Notion by name (fuzzy match acceptable)
 - [ ] Combined ingredient list is generated, with duplicate ingredients merged (e.g. two recipes needing garlic → "garlic x3")
 - [ ] Grocery list is organized by category: Produce | Protein | Dairy | Pantry | Other

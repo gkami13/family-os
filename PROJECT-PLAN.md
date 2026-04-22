@@ -11,7 +11,7 @@ The original CLAUDE.md proposed Recipe Capture as the first working feature. **T
 
 1. **Task fallthrough is the live pain right now.** Recipe chaos is annoying. Missed household commitments affect real people in real time.
 2. **Notion MCP is already wired.** Task coordination requires zero new infrastructure — we can ship value this week.
-3. **Jillian becomes a real user immediately.** A shared task board makes this a two-person system from day one, not a demo for one person.
+3. **wife becomes a real user immediately.** A shared task board makes this a two-person system from day one, not a demo for one person.
 4. **Recipe scraping is higher-risk.** Web scraping + parsing has more failure modes. Tackle it once the project has momentum, not as the opening bet.
 
 Sequence: **Tasks → Calendar → Meals.** Each workstream builds on the pattern of the previous one.
@@ -42,7 +42,7 @@ Sequence: **Tasks → Calendar → Meals.** Each workstream builds on the patter
 - Test update + completion flows
 - Commit: `feat(tasks): story-02 — update task status via Claude CLI`
 
-**Week 1 checkpoint:** Both Go and Jillian can create and complete household tasks through Notion. The system is live and being used.
+**Week 1 checkpoint:** Both husband and wife can create and complete household tasks through Notion. The system is live and being used.
 
 ---
 
@@ -67,7 +67,7 @@ Sequence: **Tasks → Calendar → Meals.** Each workstream builds on the patter
 ---
 
 ### Week 3 — Calendar Sync Begins (Story 04)
-**Goal:** Go's personal Google Calendar appears in Notion Family Calendar.
+**Goal:** husband's personal Google Calendar appears in Notion Family Calendar.
 
 **Hours 1–2: Setup + research**
 - Identify the right Google Calendar MCP (evaluate @anthropic or community options)
@@ -86,12 +86,12 @@ Sequence: **Tasks → Calendar → Meals.** Each workstream builds on the patter
 - Update ARCHITECTURE.md if schema needed to change
 - Commit: `docs: update architecture after story-04`
 
-**Week 3 checkpoint:** Go's personal calendar is visible in Notion. The calendar sync pattern is proven.
+**Week 3 checkpoint:** husband's personal calendar is visible in Notion. The calendar sync pattern is proven.
 
 ---
 
 ### Week 4 — Outlook + Conflict Detection (Stories 05–06)
-**Goal:** Full calendar picture for both Go and Jillian. Conflicts are surfaced automatically.
+**Goal:** Full calendar picture for both husband and wife. Conflicts are surfaced automatically.
 
 **Hours 1–3: Story 05 — Outlook → Notion**
 - Validate corporate Outlook OAuth is feasible (may need IT check first)
@@ -100,8 +100,8 @@ Sequence: **Tasks → Calendar → Meals.** Each workstream builds on the patter
 - Commit: `feat(calendar): story-05 — Outlook work calendar sync`
 
 **Hours 4–7: Story 06 — Conflict Detection**
-- Coordinate with Jillian: she authorizes her Google Calendar
-- Sync Jillian's calendar into Notion Family Calendar (Person: Jillian)
+- Coordinate with wife: she authorizes her Google Calendar
+- Sync wife's calendar into Notion Family Calendar (Person: Wife)
 - Build conflict detection query: time range intersection across both people
 - Build family window query: free periods for both simultaneously
 - Test with a real week of calendar data
@@ -154,7 +154,7 @@ Sequence: **Tasks → Calendar → Meals.** Each workstream builds on the patter
 - Note friction points — create follow-up stories or backlog items for anything that needs refinement
 - Commit: `chore: end-to-end integration test notes`
 
-**Week 6 checkpoint:** All three workstreams are functional. The system is being actively used by both Go and Jillian for real household management.
+**Week 6 checkpoint:** All three workstreams are functional. The system is being actively used by both husband and wife for real household management.
 
 ---
 
@@ -167,7 +167,7 @@ These are real, good ideas that are explicitly out of scope for the first 6 week
 | Amazon basket auto-fill          | Depends on grocery list being reliable first         |
 | Push notifications (task assign) | Nice-to-have, adds complexity before core is stable  |
 | Next.js frontend                 | Notion is the frontend — no separate app needed      |
-| Jillian direct CLI access        | Coordinate after system is proven to be useful       |
+| wife direct CLI access        | Coordinate after system is proven to be useful       |
 | Voice input                      | Phase 6+ — out of scope for core workflows           |
 | AI recipe suggestions            | Not the problem we're solving                        |
 | Multi-family / SaaS version      | Personal-first, product maybe later                  |
