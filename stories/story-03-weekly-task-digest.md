@@ -10,12 +10,12 @@ A weekly summary of all open and overdue tasks, grouped by assignee, delivered a
 We start each week with full situational awareness — no surprises about what's fallen behind
 
 ## Acceptance Criteria
-- [ ] Running "weekly digest" via Claude CLI generates a summary of all open tasks
-- [ ] Summary groups tasks by: Overdue | Due This Week | Upcoming
-- [ ] Each group shows assignee and task count
-- [ ] Overdue tasks are explicitly flagged (not buried)
-- [ ] Output is readable in terminal AND optionally written to a Notion page
-- [ ] Can be triggered manually or on a schedule (cron)
+- [x] Running "weekly digest" via Claude CLI generates a summary of all open tasks
+- [x] Summary groups tasks by: Overdue | Due This Week | Upcoming
+- [x] Each group shows assignee and task count
+- [x] Overdue tasks are explicitly flagged (not buried)
+- [x] Output is readable in terminal AND optionally written to a Notion page
+- [x] Can be triggered manually or on a schedule (cron)
 
 ## Technical Notes
 - Reads from Notion Family Tasks database (Story 01 schema)
@@ -29,5 +29,9 @@ We start each week with full situational awareness — no surprises about what's
 ## Estimated Effort
 2–3 hours (query + grouping logic + formatting)
 
+## Scripts
+- `scripts/weekly-digest.py` — main script (CLI output + optional Notion write)
+- `scripts/run-weekly-digest.sh` — cron wrapper
+
 ## Status
-Not Started
+Complete

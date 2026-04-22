@@ -51,12 +51,16 @@ Every feature is built and validated via Claude CLI before any UI is considered.
 
 ### Notion Database IDs
 
-| Database      | Page URL                                                                 | Data Source ID                         |
-|---------------|--------------------------------------------------------------------------|----------------------------------------|
-| Family OS hub | https://www.notion.so/34a2cb98397481709c3ec3746f6e9b8f                  | —                                      |
-| Projects      | https://www.notion.so/c5ca349eadad491c8a3f16e2b82b506a                  | dc95ad9e-28ed-4474-a904-882e65447128   |
-| Family Tasks  | https://www.notion.so/395f395ac3de4ddaa8e86518e3c0377a                  | accaebb5-6f39-4c98-9902-d5b5a6124643   |
-| Meal Planner  | https://www.notion.so/3332cb98397480ed9f8dd37ffaf21f9c                  | 3332cb98-3974-808d-b6dc-000b742030b8   |
+Two ID types exist — use the right one for the right tool:
+- **Page ID** (from URL) — used by Python `notion-client` and direct REST API calls
+- **Data Source ID** (collection ID) — used by Notion MCP internally
+
+| Database      | Page ID (REST API / Python)              | Data Source ID (MCP only)              |
+|---------------|------------------------------------------|----------------------------------------|
+| Family OS hub | 34a2cb98-3974-8170-9c3e-c3746f6e9b8f    | —                                      |
+| Projects      | c5ca349e-adad-491c-8a3f-16e2b82b506a    | dc95ad9e-28ed-4474-a904-882e65447128   |
+| Family Tasks  | 395f395a-c3de-4dda-a8e8-6518e3c0377a    | accaebb5-6f39-4c98-9902-d5b5a6124643   |
+| Meal Planner  | 3332cb98-3974-80ed-9f8d-d37ffaf21f9c    | 3332cb98-3974-808d-b6dc-000b742030b8   |
 
 ### Projects (Notion Database)
 
