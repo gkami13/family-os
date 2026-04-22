@@ -49,6 +49,15 @@ Every feature is built and validated via Claude CLI before any UI is considered.
 
 ## Data Model
 
+### Notion Database IDs
+
+| Database      | Page URL                                                                 | Data Source ID                         |
+|---------------|--------------------------------------------------------------------------|----------------------------------------|
+| Family OS hub | https://www.notion.so/34a2cb98397481709c3ec3746f6e9b8f                  | —                                      |
+| Projects      | https://www.notion.so/c5ca349eadad491c8a3f16e2b82b506a                  | dc95ad9e-28ed-4474-a904-882e65447128   |
+| Family Tasks  | https://www.notion.so/395f395ac3de4ddaa8e86518e3c0377a                  | accaebb5-6f39-4c98-9902-d5b5a6124643   |
+| Meal Planner  | https://www.notion.so/3332cb98397480ed9f8dd37ffaf21f9c                  | 3332cb98-3974-808d-b6dc-000b742030b8   |
+
 ### Projects (Notion Database)
 
 | Field       | Type          | Values                                    |
