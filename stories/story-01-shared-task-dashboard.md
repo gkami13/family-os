@@ -1,34 +1,47 @@
-# Story 01: Shared Task Dashboard
+# Story 01: Task Manager with Projects and Assignments
 
 ## As a
 Go or Jillian
 
 ## I want
-To create a household task in Notion with a title, assignee (Go or Jillian), due date, and category (Home, Kids, Admin, Dog)
+To create household and personal tasks that belong to specific projects, assign them to each other, and see everything in a single shared Notion view sorted by priority
 
 ## So that
-Nothing falls through the cracks — every task has an owner and a deadline, visible to both of us
+We have one place that works like a real task manager — not a flat list, but organized by project, with clear ownership and priority so nothing falls through
 
 ## Acceptance Criteria
-- [ ] A Notion database exists called "Family Tasks" with fields: Title, Assignee, Due Date, Category, Status, Notes
-- [ ] Go can create a task via Claude CLI in natural language (e.g. "Add task: schedule Hiro's vet appointment, assigned to Jillian, due Friday")
-- [ ] Task appears in Notion with correct fields populated
-- [ ] Both Go and Jillian can view all open tasks in one Notion view
-- [ ] Tasks are filterable by Assignee and Status
+
+### Tasks Database
+- [ ] A Notion "Family Tasks" database exists with: Title, Project (relation), Assignee, Priority, Status, Due Date, Recurring, Notes
+- [ ] Go can create a task via Claude CLI: "Add task: call pediatrician, P1, assigned to Jillian, due Thursday, project: Kids"
+- [ ] Task appears in Notion with all fields populated and linked to the correct project
+
+### Projects Database
+- [ ] A separate Notion "Projects" database exists with: Name, Owner, Status, Description
+- [ ] Example projects pre-created: Home, Kids, Admin, Dog, Work — Go can add more
+- [ ] Each project page in Notion shows all tasks belonging to it (linked view)
+- [ ] Go can create a new project via Claude CLI: "Create project: Home Renovation"
+
+### Shared Assignment View
+- [ ] A "My Tasks" filtered view exists for Go (shows tasks assigned to Go or Both)
+- [ ] A "Jillian's Tasks" filtered view exists (shows tasks assigned to Jillian or Both)
+- [ ] A "All Open Tasks" view shows everything, grouped by Project, sorted by Priority then Due Date
+- [ ] Both Go and Jillian can see all views in the shared Notion workspace
 
 ## Technical Notes
-- Uses existing Notion MCP (read/write)
-- Notion database schema must be defined before any task creation
-- Status field: Not Started | In Progress | Done
-- Category field: Home | Kids | Admin | Dog | Other
-- Assignee field: Go | Jillian | Both
-- This story establishes the Notion data model that all task stories depend on
+- Two Notion databases: Projects + Family Tasks (Tasks has a Relation field pointing to Projects)
+- Notion relation field allows linking tasks to project pages — enables per-project rollup views
+- Priority: P1 (do today) | P2 (this week) | P3 (someday/maybe) — default P2
+- Status: Not Started | In Progress | Done | Blocked
+- Recurring: checkbox — recurring logic (auto-recreate on completion) is deferred to Story 02
+- Assignee: Go | Jillian | Both
+- The "All Open Tasks" view grouped by Project is the primary dashboard feed for Story 00
 
 ## Dependencies
-- None (first story, foundational)
+- None — this is the foundation story
 
 ## Estimated Effort
-3–4 hours (schema design + MCP wiring + test with real tasks)
+4–5 hours (two database schemas + relations + views + CLI wiring for both create task and create project)
 
 ## Status
 Not Started

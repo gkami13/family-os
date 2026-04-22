@@ -49,16 +49,33 @@ Every feature is built and validated via Claude CLI before any UI is considered.
 
 ## Data Model
 
-### Family Tasks (Notion Database)
+### Projects (Notion Database)
 
 | Field       | Type          | Values                                    |
 |-------------|---------------|-------------------------------------------|
-| Title       | Title         | Free text                                 |
-| Assignee    | Select        | Go \| Jillian \| Both                    |
-| Status      | Select        | Not Started \| In Progress \| Done        |
-| Category    | Select        | Home \| Kids \| Admin \| Dog \| Other    |
-| Due Date    | Date          | Date picker                               |
-| Notes       | Text          | Free text                                 |
+| Name        | Title         | Free text                                 |
+| Owner       | Select        | Go \| Jillian \| Both                    |
+| Status      | Select        | Active \| On Hold \| Complete             |
+| Description | Text          | Free text                                 |
+
+Default projects: Home, Kids, Admin, Dog, Work. Go can create new projects at any time. Each project page shows a linked view of all tasks belonging to it.
+
+### Family Tasks (Notion Database)
+
+| Field       | Type          | Values                                        |
+|-------------|---------------|-----------------------------------------------|
+| Title       | Title         | Free text                                        |
+| Project     | Relation      | → Projects database                              |
+| Assignee    | Select        | Go \| Jillian \| Both                           |
+| Priority    | Select        | P1 (do today) \| P2 (this week) \| P3 (someday) |
+| Status      | Select        | Not Started \| In Progress \| Done \| Blocked   |
+| Due Date    | Date          | Date picker                                      |
+| Recurring   | Checkbox      | Boolean — task reappears after completion        |
+| Notes       | Text          | Free text                                        |
+
+Default sort: Priority ascending, then Due Date ascending. This powers the dashboard tasks view.
+
+Three key Notion views: "My Tasks" (Go), "Jillian's Tasks", "All Open Tasks" grouped by Project.
 
 ### Family Calendar (Notion Database)
 
@@ -77,6 +94,17 @@ Every feature is built and validated via Claude CLI before any UI is considered.
 Existing schema — do not modify without confirming current field names via Notion MCP first.
 
 Expected fields: Title, Source URL, Ingredients (text), Cuisine, Prep Time
+
+### Work Notes (Notion Database)
+
+| Field       | Type          | Values                                          |
+|-------------|---------------|-------------------------------------------------|
+| Title       | Title         | Free text                                       |
+| Date        | Date          | Auto-populated to today on creation             |
+| Content     | Text          | Rich text — the actual note                     |
+| Tags        | Multi-select  | Work \| Personal \| Meeting \| Idea \| Follow-up|
+
+Sorted by Date descending. Surfaces in the Go-only section of the Unified Dashboard.
 
 ### Meal Plan (Notion Page per week)
 
@@ -101,8 +129,9 @@ Grocery List - Week of [date]
 | MCP Server          | Status        | Auth Required        | Used By           |
 |---------------------|---------------|----------------------|-------------------|
 | Notion MCP          | Configured    | Notion API key       | Stories 01–03, 07–08 |
-| Google Calendar MCP | To configure  | Google OAuth         | Stories 04, 06    |
+| Google Calendar MCP | To configure  | Google OAuth         | Stories 04, 06       |
 | MS365 / Outlook MCP | To configure  | Microsoft OAuth (work account policy TBD) | Story 05 |
+| Granola MCP         | Available     | Granola account      | Story 10             |
 
 ---
 
