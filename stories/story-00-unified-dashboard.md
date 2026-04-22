@@ -31,8 +31,8 @@ I don't need to open five different apps to know what's happening today — one 
 ```
 
 ## Acceptance Criteria
-- [ ] A single Notion page exists called "Family OS Dashboard"
-- [ ] Tasks section: linked view of Family Tasks database, filtered to open items, sorted by Priority then Due Date
+- [x] A single Notion page exists called "Family OS Dashboard"
+- [x] Tasks section: linked view of Family Tasks database, filtered to open items, sorted by Priority then Due Date
 - [ ] Calendar section: linked view of Family Calendar database, filtered to current week, grouped by day
 - [ ] Conflicts flagged visually in the calendar section (both husband and wife blocked at same time)
 - [ ] Meals section: linked view of current week's meal plan
@@ -51,15 +51,18 @@ I don't need to open five different apps to know what's happening today — one 
 ## Build Order Note
 This story is Story 00 because it defines the destination. Build the skeleton Notion page in Week 1 alongside Story 01. Add sections to it as each subsequent story ships. By Week 6 it's fully populated.
 
+## Notion Page
+https://www.notion.so/34a2cb98397481d9b22fddb7a469615c
+
 ## Dependencies
 - Skeleton: none (create the page structure in Week 1)
-- Tasks section: Story 01
+- Tasks section: Story 01 ✅
 - Calendar section: Stories 04–06
 - Meals section: Stories 07–08
-- Work Notes: Story 09
+- Work Notes: Story 10
 
 ## Estimated Effort
 2–3 hours total across the project (30 min setup in Week 1, then 20–30 min per workstream as each ships)
 
 ## Status
-Not Started
+In Progress — skeleton live, tasks section complete. Calendar/meals/notes fill in as workstreams ship.
